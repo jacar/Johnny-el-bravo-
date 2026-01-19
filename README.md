@@ -1,20 +1,23 @@
+<!-- README.md (PORTADA) -->
+
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+
+<img src="https://www.webcincodev.com/blog/wp-content/uploads/2026/01/Captura-de-pantalla-2026-01-18-191513.png" alt="Header hero - Johnny El Bravo" width="100%" />
+
+<br/><br/>
+
+# Johnny “El Bravo” López
+
+**Biografía oficial y libro _“El Baúl Sin Censura”_**
+
+<a href="https://johnny-el-bravo.vercel.app/"><strong>Ver sitio en vivo</strong></a>
+
 </div>
 
-# Run and deploy your AI Studio app
+---
 
-This contains everything you need to run your app locally.
+## Portada
 
-View your app in AI Studio: https://ai.studio/apps/drive/1fPMRd4gK1aMgNI3QuhQt2wXeJ9a_KUKe
+Este repositorio corresponde a la **portada (landing page)** del sitio oficial de Johnny “El Bravo” López, enfocada en presentar su historia y destacar el libro **“El Baúl Sin Censura”**.
 
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-
-3. Run the app:
-   `npm run dev`
+> **URL pública:** https://johnny-el-bravo.vercel.app/
