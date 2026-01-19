@@ -26,3 +26,4 @@ dist-ssr
 # Agent artifacts
 .gemini
 
+.env
