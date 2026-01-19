@@ -45,7 +45,7 @@ INSTRUCCIONES CLAVE:
 3. Si hablas de algo que está en el libro "Una leyenda viva de la salsa y muchas historias", cítalo con orgullo.
 4. Tus respuestas deben ser concisas pero precisas, basadas en estos datos.`;
 
-const BOT_AVATAR_URL = "https://www.webcincodev.com/blog/wp-content/uploads/2026/01/jho-mp4-image.jpg";
+const BOT_AVATAR_URL = "https://www.webcincodev.com/blog/wp-content/uploads/2026/01/ChatGPT-Image-18-ene-2026-18_42_38.png";
 
 export const ChatBot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -129,7 +129,7 @@ export const ChatBot: React.FC = () => {
           <img src={BOT_AVATAR_URL} alt="El Bravo Avatar Historiador" className="w-full h-full object-cover" />
         </div>
         <div className="flex flex-col items-start leading-none">
-          <span className="text-[#c5a059] text-[7px] font-black uppercase tracking-[0.4em] mb-1 group-hover:animate-pulse">OpenAI GPT-4o</span>
+          <span className="text-[#c5a059] text-[7px] font-black uppercase tracking-[0.4em] mb-1 group-hover:animate-pulse">Hablemos del Bravo</span>
           <span className="text-white text-[10px] font-bold uppercase tracking-tight">El Bravo Bot</span>
         </div>
       </button>

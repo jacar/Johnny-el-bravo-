@@ -1,7 +1,7 @@
 import { BioStage, Achievement, Disc, Testimonial, BookHighlight, Video, Song } from './types';
 
 export const BOOK_STORE_LINKS = {
-  amazon: "#", 
+  amazon: "#",
   apple: "#",
   google: "#"
 };
@@ -34,7 +34,7 @@ export const BIO_STAGES: BioStage[] = [
     title: "Origen: Puerta de Tierra",
     description: "Nacimiento de una leyenda en el Residencial San Agustín.",
     longText: "Nacido el 4 de mayo de 1944 en San Juan. De familia humilde, Johnny fue el quinto de seis hermanos. Su madre, Genoveva 'Purula' Llanos, fue su primera gran influencia musical.",
-    image: "https://i.pinimg.com/originals/39/9d/00/399d008299cf7b027b3912fa483b21ec.jpg"
+    image: "https://www.webcincodev.com/blog/wp-content/uploads/2026/01/ChatGPT-Image-18-ene-2026-18_42_38.png"
   },
   {
     id: "stage-1961",
