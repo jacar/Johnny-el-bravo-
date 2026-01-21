@@ -432,7 +432,7 @@ const App: React.FC = () => {
           </h1>
 
           <p className="text-white/60 text-xl md:text-4xl max-w-4xl mb-14 font-light italic leading-relaxed">
-            "Siete décadas de sabor, fe y el sonido rítmico y auténtico que definió la salsa brava para el mundo."
+            "Seis décadas de sabor, fe y el sonido rítmico y auténtico que definió la salsa brava para el mundo."
           </p>
           <div className="flex flex-col sm:flex-row gap-8">
             <a href="#libro" onClick={(e) => handleLinkClick(e, '#libro')} className="group relative bg-[#c5a059] text-black px-16 py-8 font-bold tracking-[0.4em] text-xs hover:bg-white transition-all shadow-[0_20px_60px_rgba(197,160,89,0.4)] uppercase text-center overflow-hidden">
@@ -540,7 +540,7 @@ const App: React.FC = () => {
               </h2>
 
               <div className="inline-block px-4 py-2 border-l-2 border-[#c5a059] mb-12 bg-black/40 backdrop-blur-sm">
-                <p className="text-[12px] uppercase tracking-[0.5em] text-white font-black">Escrito por: Fabio Araque Guzmán</p>
+                <p className="text-[12px] uppercase tracking-[0.5em] text-white font-black">Editado por: Fabio Araque Guzmán</p>
               </div>
 
               <p className="text-2xl md:text-3xl text-gray-400 mb-14 italic font-light leading-relaxed max-w-2xl">
@@ -615,21 +615,28 @@ const App: React.FC = () => {
                 <Phone size={14} className="text-[#c5a059]" />
                 <p className="text-[10px] text-[#c5a059] uppercase font-black tracking-[0.4em]">Oficina Puerto Rico</p>
               </div>
-              <p className="text-xl md:text-2xl italic font-serif text-white/80">1 (787) 319-2826</p>
+              <div className="flex flex-col gap-2">
+                <p className="text-sm md:text-base italic font-serif text-white/80">Grace M Lopez-Williams <br /> <span className="text-lg md:text-xl">+1 (678) 517-4422</span></p>
+                <p className="text-sm md:text-base italic font-serif text-white/80">Johnny El Bravo López <br /> <span className="text-lg md:text-xl">+1 (787) 319-2826</span></p>
+              </div>
             </div>
             <div className="space-y-4">
               <div className="flex items-center justify-center gap-2 mb-2">
                 <Phone size={14} className="text-[#c5a059]" />
                 <p className="text-[10px] text-[#c5a059] uppercase font-black tracking-[0.4em]">Oficina Colombia</p>
               </div>
-              <p className="text-xl md:text-2xl italic font-serif text-white/80">+57 313 4144273</p>
+              <div className="flex flex-col gap-2">
+                <p className="text-sm md:text-base italic font-serif text-white/80">Armando Ovalle Jácome <br /> <span className="text-lg md:text-xl">+57 (305) 2891719</span></p>
+              </div>
             </div>
             <div className="space-y-4">
               <div className="flex items-center justify-center gap-2 mb-2">
                 <Globe size={14} className="text-[#c5a059]" />
-                <p className="text-[10px] text-[#c5a059] uppercase font-black tracking-[0.4em]">Contacto Colombia</p>
+                <p className="text-[10px] text-[#c5a059] uppercase font-black tracking-[0.4em]">Administración Colombia</p>
               </div>
-              <p className="text-xl md:text-2xl italic font-serif text-white/80">57 (3052891719)</p>
+              <div className="flex flex-col gap-2">
+                <p className="text-sm md:text-base italic font-serif text-white/80">Fabio Araque Guzmán <br /> <span className="text-lg md:text-xl">+57 (3135) 4144273</span></p>
+              </div>
             </div>
           </div>
 
