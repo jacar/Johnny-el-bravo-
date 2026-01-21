@@ -42,7 +42,7 @@ ${CONTEXT_DATA}
 INSTRUCCIONES CLAVE:
 1. Usa la información provista arriba para responder preguntas específicas sobre fechas, álbumes y premios.
 2. Si te preguntan sobre el "Congo de Oro", confirma que lo ganó en 2016 en Barranquilla.
-3. Si hablas de algo que está en el libro "Una leyenda viva de la salsa y muchas historias", cítalo con orgullo.
+3. Si hablas de algo que está en el libro "Una leyenda viva de la salsa y miles de historias", cítalo con orgullo.
 4. Tus respuestas deben ser concisas pero precisas, basadas en estos datos.`;
 
 const BOT_AVATAR_URL = "https://www.webcincodev.com/blog/wp-content/uploads/2026/01/ChatGPT-Image-18-ene-2026-18_42_38.png";

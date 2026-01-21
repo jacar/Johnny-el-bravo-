@@ -520,7 +520,7 @@ const App: React.FC = () => {
           <img
             src={BOOK_IMAGE_URL}
             className="w-full h-full object-cover opacity-60 transition-transform duration-[10s] ease-out group-hover:scale-110"
-            alt="Fondo de la portada del libro biográfico 'Una leyenda viva de la salsa y muchas historias' de Johnny El Bravo López"
+            alt="Fondo de la portada del libro biográfico 'Una leyenda viva de la salsa y miles de historias' de Johnny El Bravo López"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/30 lg:to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40"></div>

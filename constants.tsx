@@ -88,8 +88,8 @@ export const BIO_STAGES: BioStage[] = [
     id: "stage-2025",
     year: "2025",
     title: "EL LIBRO OFICIAL",
-    description: "Una leyenda viva de la salsa y muchas historias.",
-    longText: "El capítulo final de esta cronología celebra el lanzamiento de la obra definitiva. Johnny abre su corazón para narrar siete décadas de música y fe en 'Una leyenda viva de la salsa y muchas historias', escrito por Fabio Araque Guzmán.",
+    description: "Una leyenda viva de la salsa y miles de historias.",
+    longText: "El capítulo final de esta cronología celebra el lanzamiento de la obra definitiva. Johnny abre su corazón para narrar siete décadas de música y fe en 'Una leyenda viva de la salsa y miles de historias', escrito por Fabio Araque Guzmán.",
     image: "https://www.webcincodev.com/blog/wp-content/uploads/2026/01/HEADERS.png"
   }
 ];

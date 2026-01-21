@@ -26,12 +26,12 @@ export function DiscographyCarousel({ discs, className }: DiscographyCarouselPro
           </h2>
         </div>
         <p className="text-white/30 text-[10px] uppercase tracking-[0.3em] font-bold max-w-xs md:text-right">
-          Siete décadas de grabaciones maestras que definieron el sonido del trombón.
+          Seis décadas de grabaciones maestras que definieron el sonido del trombón.
         </p>
       </div>
 
       <div className="relative flex items-center overflow-hidden py-10">
-        <motion.div 
+        <motion.div
           className="flex gap-16 px-6"
           animate={{
             x: ["0%", "-33.33%"]
@@ -43,14 +43,14 @@ export function DiscographyCarousel({ discs, className }: DiscographyCarouselPro
           }}
         >
           {duplicatedDiscs.map((disc, idx) => (
-            <div 
-              key={`${disc.title}-${idx}`} 
+            <div
+              key={`${disc.title}-${idx}`}
               className="group relative flex-shrink-0 flex items-center gap-6"
             >
               {/* Year/Index Bubble */}
               <div className="flex flex-col items-center">
-                 <span className="text-[#c5a059] font-serif italic text-3xl md:text-4xl">{disc.year}</span>
-                 <div className="w-px h-8 bg-gradient-to-b from-[#c5a059]/40 to-transparent mt-2"></div>
+                <span className="text-[#c5a059] font-serif italic text-3xl md:text-4xl">{disc.year}</span>
+                <div className="w-px h-8 bg-gradient-to-b from-[#c5a059]/40 to-transparent mt-2"></div>
               </div>
 
               {/* Text Info */}
