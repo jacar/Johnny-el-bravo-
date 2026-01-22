@@ -635,7 +635,7 @@ const App: React.FC = () => {
                 <p className="text-[10px] text-[#c5a059] uppercase font-black tracking-[0.4em]">Administración Colombia</p>
               </div>
               <div className="flex flex-col gap-2">
-                <p className="text-sm md:text-base italic font-serif text-white/80">Fabio Araque Guzmán <br /> <span className="text-lg md:text-xl">+57 (3135) 4144273</span></p>
+                <p className="text-sm md:text-base italic font-serif text-white/80">Fabio Araque Guzmán <br /> <span className="text-lg md:text-xl">+57 (313) 4144273</span></p>
               </div>
             </div>
           </div>
