@@ -9,7 +9,7 @@ export const BOOK_STORE_LINKS = {
 export const BOOK_IMAGE_URL = "https://www.webcincodev.com/blog/wp-content/uploads/2026/01/HEADERS.png";
 
 export const LEGEND_STATS = [
-  { label: "Años de Trayectoria", value: "70", suffix: "+" },
+  { label: "Años de Trayectoria", value: "60", suffix: "+" },
   { label: "Álbumes Producidos", value: "50", suffix: "+" },
   { label: "Países Conquistados", value: "30", suffix: "+" },
   { label: "Clásicos en el Baúl", value: "100", suffix: "+" }

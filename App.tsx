@@ -507,7 +507,7 @@ const App: React.FC = () => {
           <h2 id="galeria-heading" className="text-6xl md:text-[10rem] font-serif italic text-white uppercase tracking-tighter leading-[0.9] mb-6">Archivo <span className="text-[#c5a059]">Bravo</span></h2>
           <div className="flex items-center justify-center gap-6">
             <div className="h-px w-20 bg-[#c5a059]/30"></div>
-            <p className="text-gray-500 tracking-[0.6em] uppercase text-[10px] font-black">Un legado en blanco y negro del Trombón de Oro</p>
+            <p className="text-gray-500 tracking-[0.6em] uppercase text-[10px] font-black">Un legado en blanco y negro de Johnny López «El Bravo» Leyenda</p>
             <div className="h-px w-20 bg-[#c5a059]/30"></div>
           </div>
         </div>
