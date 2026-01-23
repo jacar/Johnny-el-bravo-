@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BioStage } from "../../types";
-import { History } from "lucide-react";
+import { History, Hand, ArrowDown, ArrowUp } from "lucide-react";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -99,8 +99,8 @@ export const CinematicTimeline: React.FC<CinematicTimelineProps> = ({ stages, on
               <span
                 key={`year-${idx}`}
                 className={`parallax-year-text absolute text-[35vw] md:text-[50vw] font-serif font-bold italic leading-none transition-all duration-1000 ease-in-out ${idx === activeIndex
-                    ? "opacity-10 blur-0 scale-100"
-                    : "opacity-0 blur-3xl scale-90"
+                  ? "opacity-10 blur-0 scale-100"
+                  : "opacity-0 blur-3xl scale-90"
                   }`}
                 style={{ color: "#c5a059" }}
               >
@@ -119,8 +119,8 @@ export const CinematicTimeline: React.FC<CinematicTimelineProps> = ({ stages, on
               <div
                 key={`content-${idx}`}
                 className={`transition-all duration-1000 absolute w-full ${idx === activeIndex
-                    ? "opacity-100 translate-y-0 pointer-events-auto"
-                    : "opacity-0 translate-y-20 pointer-events-none"
+                  ? "opacity-100 translate-y-0 pointer-events-auto"
+                  : "opacity-0 translate-y-20 pointer-events-none"
                   }`}
               >
                 <div className="flex items-center gap-10 mb-12">
@@ -130,7 +130,29 @@ export const CinematicTimeline: React.FC<CinematicTimelineProps> = ({ stages, on
                   </div>
                   <div className="h-10 w-px bg-[#c5a059]/30"></div>
                   <div className="flex flex-col">
-                    <span className="text-[#c5a059] font-bold text-[10px] uppercase tracking-[0.4em] mb-3">Cronología</span>
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-[#c5a059] font-bold text-[10px] uppercase tracking-[0.4em]">Cronología</span>
+                      {/* Mobile Hint Inline */}
+                      <div className="md:hidden flex items-center gap-1 animate-pulse opacity-80">
+                        {activeIndex > 0 && activeIndex === stages.length - 1 ? (
+                          <div className="flex flex-col items-center">
+                            <ArrowUp size={10} className="text-[#c5a059] animate-bounce mb-[1px]" />
+                            <Hand size={12} className="text-[#c5a059]" />
+                          </div>
+                        ) : activeIndex === 0 ? (
+                          <div className="flex flex-col items-center">
+                            <Hand size={12} className="text-[#c5a059]" />
+                            <ArrowDown size={10} className="text-[#c5a059] animate-bounce mt-[1px]" />
+                          </div>
+                        ) : (
+                          <div className="flex flex-col items-center">
+                            <ArrowUp size={8} className="text-[#c5a059] animate-pulse opacity-50" />
+                            <Hand size={12} className="text-[#c5a059]" />
+                            <ArrowDown size={8} className="text-[#c5a059] animate-pulse opacity-50" />
+                          </div>
+                        )}
+                      </div>
+                    </div>
                     <span className="text-[#c5a059] font-serif italic text-4xl leading-none">{stage.year}</span>
                   </div>
                 </div>
@@ -165,8 +187,8 @@ export const CinematicTimeline: React.FC<CinematicTimelineProps> = ({ stages, on
                 <div
                   key={`img-${idx}`}
                   className={`absolute inset-0 transition-all duration-1000 ease-in-out ${idx === activeIndex
-                      ? "opacity-100 scale-100"
-                      : "opacity-0 scale-110"
+                    ? "opacity-100 scale-100"
+                    : "opacity-0 scale-110"
                     }`}
                 >
                   <div className="parallax-framed-img relative w-full h-full p-5 bg-[#0a0a0a] border border-[#c5a059]/20 shadow-[0_80px_150px_rgba(0,0,0,1)] group">
@@ -192,8 +214,8 @@ export const CinematicTimeline: React.FC<CinematicTimelineProps> = ({ stages, on
           </div>
         </div>
 
-        {/* Guía Visual de Interacción */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 animate-pulse opacity-40 z-[70]">
+        {/* Guía Visual de Interacción - Solo Desktop (Mouse) */}
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-3 animate-pulse opacity-60 z-[70] pointer-events-none">
           <div className="w-6 h-10 border-2 border-[#c5a059] rounded-full flex justify-center p-1">
             <div className="w-1 h-2 bg-[#c5a059] rounded-full animate-bounce"></div>
           </div>

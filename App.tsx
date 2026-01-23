@@ -25,7 +25,8 @@ import {
   Globe,
   SkipBack,
   SkipForward,
-  Volume2
+  Volume2,
+  Hand
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BIO_STAGES, DISCOGRAPHY, BOOK_HIGHLIGHTS, TOP_SONGS, HISTORICAL_GALLERY_IMAGES, ACHIEVEMENTS, LEGEND_STATS, BOOK_STORE_LINKS, BOOK_IMAGE_URL } from './constants';
@@ -521,11 +522,11 @@ const App: React.FC = () => {
       </section>
 
       {/* Hitos de una Leyenda */}
-      <section id="hitos" className="py-40 bg-black border-t border-white/5 relative overflow-hidden" aria-labelledby="hitos-heading">
+      <section id="hitos" className="py-20 md:py-40 bg-black border-t border-white/5 relative overflow-hidden" aria-labelledby="hitos-heading">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-24">
             <span className="text-[#c5a059] text-[10px] tracking-[0.8em] uppercase font-black mb-4 block">Gabinete de Trofeos</span>
-            <h2 id="hitos-heading" className="text-6xl md:text-8xl font-serif italic text-white uppercase tracking-tighter">Reconocimientos <br /><span className="text-[#c5a059]">Históricos</span></h2>
+            <h2 id="hitos-heading" className="text-4xl md:text-8xl font-serif italic text-white uppercase tracking-tighter">Reconocimientos <br /><span className="text-[#c5a059]">Históricos</span></h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {ACHIEVEMENTS.map((ach, i) => (
