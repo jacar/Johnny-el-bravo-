@@ -27,7 +27,7 @@ export const CinematicTimeline: React.FC<CinematicTimelineProps> = ({ stages, on
     const masterST = ScrollTrigger.create({
       trigger: triggerRef.current,
       start: "top top",
-      end: `+=${totalStages * 100}%`,
+      end: `+=${totalStages * 50}%`,
       pin: true,
       scrub: 1.2,
       onUpdate: (self) => {
@@ -70,7 +70,7 @@ export const CinematicTimeline: React.FC<CinematicTimelineProps> = ({ stages, on
   }, [stages.length, activeIndex]);
 
   return (
-    <div ref={triggerRef} className="relative w-full h-[50vh] md:h-screen bg-[#050505] overflow-hidden">
+    <div ref={triggerRef} className="relative w-full h-[85dvh] md:h-screen bg-[#050505] overflow-hidden">
       {/* Grano de película y ruido ambiental */}
       <div className="absolute inset-0 opacity-[0.04] pointer-events-none z-[60] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
 
@@ -123,7 +123,7 @@ export const CinematicTimeline: React.FC<CinematicTimelineProps> = ({ stages, on
                   : "opacity-0 translate-y-20 pointer-events-none"
                   }`}
               >
-                <div className="flex items-center gap-10 mb-12">
+                <div className="flex items-center justify-between w-full md:justify-start md:gap-10 mb-12">
                   <div className="flex flex-col">
                     <span className="text-[#c5a059] font-bold text-[10px] uppercase tracking-[0.4em] mb-3">Capítulo</span>
                     <span className="text-white font-serif italic text-4xl leading-none">{String(idx + 1).padStart(1, '0')}</span>
@@ -131,27 +131,27 @@ export const CinematicTimeline: React.FC<CinematicTimelineProps> = ({ stages, on
                   <div className="hidden md:block h-10 w-px bg-[#c5a059]/30"></div>
 
                   {/* Mobile Hint Centered Between Labels - User Requested */}
-                  <div className="md:hidden flex flex-col items-center justify-center w-12 mx-2">
+                  <div className="md:hidden flex flex-col items-center justify-center mx-4">
                     {activeIndex > 0 && activeIndex === stages.length - 1 ? (
                       <>
-                        <ArrowUp size={14} className="text-[#c5a059] animate-bounce mb-[2px]" />
-                        <Hand size={18} className="text-[#c5a059]" />
+                        <ArrowUp size={16} className="text-[#c5a059] animate-bounce mb-[2px]" />
+                        <Hand size={20} className="text-[#c5a059]" />
                       </>
                     ) : activeIndex === 0 ? (
                       <>
-                        <Hand size={18} className="text-[#c5a059]" />
-                        <ArrowDown size={14} className="text-[#c5a059] animate-bounce mt-[2px]" />
+                        <Hand size={20} className="text-[#c5a059]" />
+                        <ArrowDown size={16} className="text-[#c5a059] animate-bounce mt-[2px]" />
                       </>
                     ) : (
                       <>
-                        <ArrowUp size={10} className="text-[#c5a059] animate-pulse mb-[1px] opacity-60" />
-                        <Hand size={18} className="text-[#c5a059]" />
-                        <ArrowDown size={10} className="text-[#c5a059] animate-pulse mt-[1px] opacity-60" />
+                        <ArrowUp size={12} className="text-[#c5a059] animate-pulse mb-[1px] opacity-60" />
+                        <Hand size={20} className="text-[#c5a059]" />
+                        <ArrowDown size={12} className="text-[#c5a059] animate-pulse mt-[1px] opacity-60" />
                       </>
                     )}
                   </div>
 
-                  <div className="flex flex-col">
+                  <div className="flex flex-col text-right md:text-left">
                     <span className="text-[#c5a059] font-bold text-[10px] uppercase tracking-[0.4em] mb-3">Cronología</span>
                     <span className="text-[#c5a059] font-serif italic text-4xl leading-none">{stage.year}</span>
                   </div>
@@ -176,6 +176,19 @@ export const CinematicTimeline: React.FC<CinematicTimelineProps> = ({ stages, on
                     Explorar Archivo Histórico
                   </span>
                 </button>
+
+                {/* Mobile Image Display - User Requested */}
+                <div className="block lg:hidden mt-12 w-full max-w-[280px] mx-auto relative group">
+                  <div className="absolute inset-0 border border-white/5 m-2 pointer-events-none z-20"></div>
+                  <div className="aspect-[3/4] w-full overflow-hidden relative shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-[#c5a059]/20 bg-[#0a0a0a]">
+                    <img
+                      src={stage.image}
+                      className="w-full h-full object-cover grayscale brightness-75 group-hover:brightness-100 transition-all duration-700"
+                      alt={stage.title}
+                    />
+                    <div className="absolute inset-0 bg-[#c5a059]/10 mix-blend-overlay"></div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

@@ -522,7 +522,7 @@ const App: React.FC = () => {
       </section>
 
       {/* Hitos de una Leyenda */}
-      <section id="hitos" className="pt-0 pb-10 md:py-40 bg-black border-t border-white/5 relative overflow-hidden" aria-labelledby="hitos-heading">
+      <section id="hitos" className="py-16 md:py-40 bg-black border-t border-white/5 relative overflow-hidden" aria-labelledby="hitos-heading">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-12 md:mb-24">
             <span className="text-[#c5a059] text-[10px] tracking-[0.8em] uppercase font-black mb-4 block">Gabinete de Trofeos</span>
@@ -700,8 +700,8 @@ const App: React.FC = () => {
       {/* Modal Detalle Biográfico */}
       {activeStage && (
         <div className="fixed inset-0 z-[300] flex items-center justify-center p-4 bg-black/98 backdrop-blur-3xl animate-fade" role="dialog" aria-modal="true">
-          <div className="bg-[#0f0f0f] border border-[#c5a059]/30 max-w-6xl w-full p-8 md:p-24 relative shadow-[0_50px_200px_rgba(0,0,0,1)] overflow-y-auto max-h-[95vh] custom-scrollbar">
-            <button onClick={() => setActiveStage(null)} aria-label="Cerrar modal de biografía" className="absolute top-10 right-10 text-[#c5a059] hover:rotate-90 transition-all duration-500"><X size={48} /></button>
+          <div className="bg-[#0f0f0f] border border-[#c5a059]/30 max-w-6xl w-full p-8 md:p-24 relative shadow-[0_50px_200px_rgba(0,0,0,1)] overflow-y-auto max-h-[90dvh] custom-scrollbar">
+            <button onClick={() => setActiveStage(null)} aria-label="Cerrar modal de biografía" className="absolute top-4 right-4 md:top-10 md:right-10 z-50 text-[#c5a059] bg-black/50 rounded-full p-2 backdrop-blur-sm hover:rotate-90 transition-all duration-500"><X size={32} className="md:w-12 md:h-12" /></button>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
               <div className="relative group">
                 <div className="absolute -inset-2 bg-[#c5a059]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
