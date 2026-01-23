@@ -70,7 +70,7 @@ export const CinematicTimeline: React.FC<CinematicTimelineProps> = ({ stages, on
   }, [stages.length, activeIndex]);
 
   return (
-    <div ref={triggerRef} className="relative w-full h-screen bg-[#050505] overflow-hidden">
+    <div ref={triggerRef} className="relative w-full h-[50vh] md:h-screen bg-[#050505] overflow-hidden">
       {/* Grano de película y ruido ambiental */}
       <div className="absolute inset-0 opacity-[0.04] pointer-events-none z-[60] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
 
@@ -128,31 +128,31 @@ export const CinematicTimeline: React.FC<CinematicTimelineProps> = ({ stages, on
                     <span className="text-[#c5a059] font-bold text-[10px] uppercase tracking-[0.4em] mb-3">Capítulo</span>
                     <span className="text-white font-serif italic text-4xl leading-none">{String(idx + 1).padStart(1, '0')}</span>
                   </div>
-                  <div className="h-10 w-px bg-[#c5a059]/30"></div>
+                  <div className="hidden md:block h-10 w-px bg-[#c5a059]/30"></div>
+
+                  {/* Mobile Hint Centered Between Labels - User Requested */}
+                  <div className="md:hidden flex flex-col items-center justify-center w-12 mx-2">
+                    {activeIndex > 0 && activeIndex === stages.length - 1 ? (
+                      <>
+                        <ArrowUp size={14} className="text-[#c5a059] animate-bounce mb-[2px]" />
+                        <Hand size={18} className="text-[#c5a059]" />
+                      </>
+                    ) : activeIndex === 0 ? (
+                      <>
+                        <Hand size={18} className="text-[#c5a059]" />
+                        <ArrowDown size={14} className="text-[#c5a059] animate-bounce mt-[2px]" />
+                      </>
+                    ) : (
+                      <>
+                        <ArrowUp size={10} className="text-[#c5a059] animate-pulse mb-[1px] opacity-60" />
+                        <Hand size={18} className="text-[#c5a059]" />
+                        <ArrowDown size={10} className="text-[#c5a059] animate-pulse mt-[1px] opacity-60" />
+                      </>
+                    )}
+                  </div>
+
                   <div className="flex flex-col">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="text-[#c5a059] font-bold text-[10px] uppercase tracking-[0.4em]">Cronología</span>
-                      {/* Mobile Hint Inline */}
-                      <div className="md:hidden flex items-center gap-1 animate-pulse opacity-80">
-                        {activeIndex > 0 && activeIndex === stages.length - 1 ? (
-                          <div className="flex flex-col items-center">
-                            <ArrowUp size={10} className="text-[#c5a059] animate-bounce mb-[1px]" />
-                            <Hand size={12} className="text-[#c5a059]" />
-                          </div>
-                        ) : activeIndex === 0 ? (
-                          <div className="flex flex-col items-center">
-                            <Hand size={12} className="text-[#c5a059]" />
-                            <ArrowDown size={10} className="text-[#c5a059] animate-bounce mt-[1px]" />
-                          </div>
-                        ) : (
-                          <div className="flex flex-col items-center">
-                            <ArrowUp size={8} className="text-[#c5a059] animate-pulse opacity-50" />
-                            <Hand size={12} className="text-[#c5a059]" />
-                            <ArrowDown size={8} className="text-[#c5a059] animate-pulse opacity-50" />
-                          </div>
-                        )}
-                      </div>
-                    </div>
+                    <span className="text-[#c5a059] font-bold text-[10px] uppercase tracking-[0.4em] mb-3">Cronología</span>
                     <span className="text-[#c5a059] font-serif italic text-4xl leading-none">{stage.year}</span>
                   </div>
                 </div>

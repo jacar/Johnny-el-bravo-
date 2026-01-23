@@ -495,7 +495,7 @@ const App: React.FC = () => {
       </header>
 
       {/* Hall of Fame Stats */}
-      <section id="stats" className="py-40 bg-[#080808] relative" aria-labelledby="stats-heading">
+      <section id="stats" className="py-20 md:py-40 bg-[#080808] relative" aria-labelledby="stats-heading">
         <h2 id="stats-heading" className="sr-only">Estadísticas de la Trayectoria de Johnny El Bravo</h2>
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 md:gap-20">
@@ -522,9 +522,9 @@ const App: React.FC = () => {
       </section>
 
       {/* Hitos de una Leyenda */}
-      <section id="hitos" className="py-20 md:py-40 bg-black border-t border-white/5 relative overflow-hidden" aria-labelledby="hitos-heading">
+      <section id="hitos" className="pt-0 pb-10 md:py-40 bg-black border-t border-white/5 relative overflow-hidden" aria-labelledby="hitos-heading">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-24">
+          <div className="text-center mb-12 md:mb-24">
             <span className="text-[#c5a059] text-[10px] tracking-[0.8em] uppercase font-black mb-4 block">Gabinete de Trofeos</span>
             <h2 id="hitos-heading" className="text-4xl md:text-8xl font-serif italic text-white uppercase tracking-tighter">Reconocimientos <br /><span className="text-[#c5a059]">Históricos</span></h2>
           </div>
@@ -553,8 +553,8 @@ const App: React.FC = () => {
       </section>
 
       {/* Galería Archivo */}
-      <section id="galeria" className="bg-black py-48 overflow-hidden border-t border-white/5" aria-labelledby="galeria-heading">
-        <div className="max-w-7xl mx-auto px-6 mb-32 text-center">
+      <section id="galeria" className="bg-black py-24 md:py-48 overflow-hidden border-t border-white/5" aria-labelledby="galeria-heading">
+        <div className="max-w-7xl mx-auto px-6 mb-16 md:mb-32 text-center">
           <h2 id="galeria-heading" className="text-6xl md:text-[10rem] font-serif italic text-white uppercase tracking-tighter leading-[0.9] mb-6">Archivo <span className="text-[#c5a059]">Bravo</span></h2>
           <div className="flex items-center justify-center gap-6">
             <div className="h-px w-20 bg-[#c5a059]/30"></div>
