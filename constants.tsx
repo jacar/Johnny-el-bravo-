@@ -10,7 +10,7 @@ export const BOOK_IMAGE_URL = "https://www.webcincodev.com/blog/wp-content/uploa
 
 export const LEGEND_STATS = [
   { label: "Años de Trayectoria", value: "60", suffix: "+" },
-  { label: "Álbumes Producidos", value: "50", suffix: "+" },
+  { label: "Álbumes Producidos", value: "25", suffix: "+" },
   { label: "Países Conquistados", value: "30", suffix: "+" },
   { label: "Clásicos en el Baúl", value: "100", suffix: "+" }
 ];

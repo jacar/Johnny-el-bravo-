@@ -34,7 +34,7 @@ import { RetroGrid } from './components/ui/retro-grid';
 import { ThreeDMarquee } from './components/ui/3d-marquee';
 import { CinematicTimeline } from './components/ui/cinematic-timeline';
 import { DiscographyCarousel } from './components/ui/discography-carousel';
-import { ChatBot } from './components/ui/chat-bot';
+
 
 const CHRONO_VIDEO_URL = "https://www.webcincodev.com/blog/wp-content/uploads/2026/01/jho.mp4";
 const LOGO_URL = "https://www.webcincodev.com/blog/wp-content/uploads/2026/01/logoelbravo.png";
@@ -284,77 +284,127 @@ const App: React.FC = () => {
         )}
       </AnimatePresence>
 
-      {/* Audio Player Compacto */}
-      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[150] w-[92%] max-w-[500px]">
-        {isPlaylistOpen && (
-          <div className="absolute bottom-full left-0 w-full mb-6 bg-[#0d0d0d] border border-[#c5a059]/30 rounded-3xl overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,1)] animate-fade" role="region" aria-label="Lista de reproducción Johnny El Bravo">
-            <div className="p-6 border-b border-white/10 flex justify-between items-center bg-zinc-900/80 backdrop-blur-md">
-              <div className="flex items-center gap-3">
-                <ListMusic size={18} className="text-[#c5a059]" />
-                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#c5a059]">Lista de Éxitos del Baúl</span>
+      {/* Audio Player Moderno - "The Golden Capsule" */}
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[150] w-[95%] max-w-[500px] md:left-auto md:translate-x-0 md:right-10">
+        <AnimatePresence>
+          {isPlaylistOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 20, scale: 0.95 }}
+              transition={{ type: "spring", bounce: 0.3 }}
+              className="absolute bottom-full left-0 w-full mb-4 bg-black/80 backdrop-blur-2xl border border-[#c5a059]/30 rounded-[2rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.8)]"
+            >
+              <div className="p-5 border-b border-white/10 flex justify-between items-center bg-white/5">
+                <div className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 bg-[#c5a059] rounded-full animate-pulse"></div>
+                  <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/90">Selección de Oro</span>
+                </div>
+                <button onClick={() => setIsPlaylistOpen(false)} className="text-white/40 hover:text-white transition-colors p-2"><X size={16} /></button>
               </div>
-              <button aria-label="Cerrar lista de canciones" onClick={() => setIsPlaylistOpen(false)} className="text-white/40 hover:text-white transition-colors"><X size={18} /></button>
-            </div>
-            <div className="max-h-[350px] overflow-y-auto custom-scrollbar bg-black/40">
-              {TOP_SONGS.map((song, i) => (
-                <button
-                  key={i}
-                  onClick={() => { setCurrentSongIndex(i); setIsPlaying(true); }}
-                  className={`w-full p-6 text-left border-b border-white/5 flex items-center gap-6 hover:bg-[#c5a059]/5 transition-all ${currentSongIndex === i ? 'bg-[#c5a059]/15' : ''}`}
-                  aria-label={`Reproducir ${song.title} del álbum ${song.album}`}
-                >
-                  <span className="text-[10px] font-mono text-[#c5a059]/40">{String(i + 1).padStart(2, '0')}</span>
-                  <div className="flex-1">
-                    <p className={`text-[12px] font-bold uppercase tracking-tight ${currentSongIndex === i ? 'text-white' : 'text-white/60'}`}>{song.title}</p>
-                    <p className="text-[9px] text-[#c5a059] uppercase font-black tracking-widest opacity-60 truncate">{song.album}</p>
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
+              <div className="max-h-[300px] overflow-y-auto custom-scrollbar p-2">
+                {TOP_SONGS.map((song, i) => (
+                  <button
+                    key={i}
+                    onClick={() => { setCurrentSongIndex(i); setIsPlaying(true); }}
+                    className={`w-full p-4 rounded-xl flex items-center gap-4 transition-all group ${currentSongIndex === i ? 'bg-[#c5a059] text-black shadow-lg shadow-[#c5a059]/20' : 'hover:bg-white/10 text-white'}`}
+                  >
+                    <span className={`text-[10px] font-mono ${currentSongIndex === i ? 'text-black/60' : 'text-white/30 group-hover:text-[#c5a059]'}`}>{String(i + 1).padStart(2, '0')}</span>
+                    <div className="flex-1 text-left">
+                      <p className={`text-[11px] font-bold uppercase tracking-tight ${currentSongIndex === i ? 'text-black' : 'text-white'}`}>{song.title}</p>
+                      <p className={`text-[9px] uppercase font-bold tracking-widest truncate ${currentSongIndex === i ? 'text-black/60' : 'text-[#c5a059]/60'}`}>{song.album}</p>
+                    </div>
+                    {currentSongIndex === i && isPlaying && (
+                      <div className="flex gap-1 items-end h-3">
+                        <div className="w-1 bg-black animate-[bounce_1s_infinite] h-full"></div>
+                        <div className="w-1 bg-black animate-[bounce_1.2s_infinite] h-2"></div>
+                        <div className="w-1 bg-black animate-[bounce_0.8s_infinite] h-3"></div>
+                      </div>
+                    )}
+                  </button>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
-        <div className="bg-black/90 backdrop-blur-3xl border border-[#c5a059]/40 rounded-full p-3 flex flex-col gap-2 shadow-[0_30px_70px_rgba(0,0,0,1)]">
-          <div
-            ref={progressBarRef}
-            onClick={handleProgressClick}
-            className="h-1.5 w-[90%] mx-auto bg-white/5 rounded-full cursor-pointer relative overflow-hidden mt-1"
-            role="progressbar"
-            aria-valuenow={(currentTime / duration) * 100}
-            aria-valuemin={0}
-            aria-valuemax={100}
-          >
-            <div
-              className="h-full bg-[#c5a059] transition-all duration-300"
-              style={{ width: `${(currentTime / duration) * 100}%` }}
-            />
-          </div>
+        <div className="relative group">
+          {/* Glow Effect */}
+          <div className="absolute -inset-1 bg-gradient-to-r from-transparent via-[#c5a059]/40 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-full"></div>
 
-          <div className="flex items-center gap-4 px-2">
+          <div className="relative bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-2 pr-6 flex items-center gap-4 shadow-[0_10px_40px_rgba(0,0,0,0.5)] overflow-hidden">
+            {/* Background Grain/Texture Overlay */}
+            <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/stardust.png')" }}></div>
+
+            {/* Vinyl / Cover Art */}
+            <div className="relative shrink-0">
+              <motion.div
+                animate={{ rotate: isPlaying ? 360 : 0 }}
+                transition={{ duration: 3, repeat: Infinity, ease: "linear", repeatType: "loop" }}
+                className={`w-14 h-14 rounded-full border-2 border-[#c5a059]/20 bg-black flex items-center justify-center shadow-2xl relative z-10 overflow-hidden ${!isPlaying && 'grayscale opacity-80'}`}
+                style={{ animationPlayState: isPlaying ? 'running' : 'paused' }}
+              >
+                <img
+                  src="https://www.webcincodev.com/blog/wp-content/uploads/2026/01/Diseno-sin-titulo-20.png"
+                  alt="Disco de Vinilo Personalizado de Johnny El Bravo"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+              {/* Needle/Brazo (Decoration) */}
+              <div className={`absolute -top-1 -right-1 w-6 h-6 z-20 transition-transform duration-500 origin-top-right ${isPlaying ? 'rotate-0' : '-rotate-45'}`}>
+                <div className="w-1 h-4 bg-white/40 rotate-12 absolute right-2 top-0"></div>
+              </div>
+            </div>
+
+            {/* Song Info & Controls */}
+            <div className="flex-1 min-w-0 py-1">
+              <div className="flex justify-between items-center mb-1">
+                <div className="flex flex-col min-w-0">
+                  <span className="text-white text-[12px] font-black uppercase tracking-tight truncate flex items-center gap-2">
+                    {TOP_SONGS[currentSongIndex].title}
+                    {isPlaying && (
+                      <span className="flex gap-0.5 h-2 items-end opacity-60">
+                        <span className="w-0.5 bg-[#c5a059] animate-[ping_1.5s_infinite]"></span>
+                      </span>
+                    )}
+                  </span>
+                  <span className="text-[#c5a059] text-[9px] font-bold uppercase tracking-[0.2em] truncate opacity-70 hover:opacity-100 transition-opacity">{TOP_SONGS[currentSongIndex].album}</span>
+                </div>
+
+                <div className="flex items-center gap-1">
+                  <button onClick={handlePrev} className="p-2 text-white/40 hover:text-white transition-colors active:scale-95"><SkipBack size={14} /></button>
+                  <button
+                    onClick={togglePlayback}
+                    className="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center hover:bg-[#c5a059] hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+                  >
+                    {isPlaying ? <Pause size={16} fill="black" /> : <Play size={16} fill="black" className="ml-0.5" />}
+                  </button>
+                  <button onClick={handleNext} className="p-2 text-white/40 hover:text-white transition-colors active:scale-95"><SkipForward size={14} /></button>
+                </div>
+              </div>
+
+              {/* Progress Bar */}
+              <div
+                ref={progressBarRef}
+                onClick={handleProgressClick}
+                className="group/progress relative h-1.5 w-full bg-white/5 rounded-full cursor-pointer overflow-hidden"
+              >
+                <motion.div
+                  className="absolute top-0 left-0 h-full bg-gradient-to-r from-[#c5a059] to-amber-200"
+                  style={{ width: `${(currentTime / duration) * 100}%` }}
+                  layoutId="progress"
+                />
+                <div className="absolute top-0 left-0 h-full w-full opacity-0 group-hover/progress:opacity-30 bg-white/10 transition-opacity"></div>
+              </div>
+            </div>
+
+            {/* Playlist Toggle */}
             <button
               onClick={() => setIsPlaylistOpen(!isPlaylistOpen)}
-              aria-label="Abrir o cerrar lista de reproducción"
-              className={`w-12 h-12 rounded-full flex items-center justify-center transition-all ${isPlaylistOpen ? 'bg-[#c5a059] text-black shadow-lg shadow-[#c5a059]/30' : 'bg-white/5 text-[#c5a059] hover:bg-[#c5a059] hover:text-black'}`}
+              className={`p-3 rounded-full transition-all ${isPlaylistOpen ? 'bg-[#c5a059]/20 text-[#c5a059]' : 'text-white/20 hover:text-white hover:bg-white/5'}`}
             >
-              <ListMusic size={22} />
+              <ListMusic size={18} />
             </button>
-
-            <div className="flex-1 min-w-0">
-              <p className="text-white text-[12px] font-black uppercase truncate tracking-tight">{TOP_SONGS[currentSongIndex].title}</p>
-              <p className="text-[#c5a059] text-[9px] font-bold uppercase tracking-widest opacity-60 truncate">{TOP_SONGS[currentSongIndex].album}</p>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <button onClick={handlePrev} aria-label="Canción anterior de Johnny El Bravo" className="p-2 text-white/40 hover:text-[#c5a059] transition-colors"><SkipBack size={18} /></button>
-              <button
-                onClick={togglePlayback}
-                aria-label={isPlaying ? "Pausar música" : "Reproducir música de la leyenda"}
-                className="w-14 h-14 bg-[#c5a059] text-black rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(197,160,89,0.4)] active:scale-90 transition-all hover:scale-105"
-              >
-                {isPlaying ? <Pause size={28} fill="black" /> : <Play size={28} fill="black" className="ml-1" />}
-              </button>
-              <button onClick={handleNext} aria-label="Siguiente canción de Johnny El Bravo" className="p-2 text-white/40 hover:text-[#c5a059] transition-colors"><SkipForward size={18} /></button>
-            </div>
           </div>
         </div>
       </div>
@@ -644,8 +694,7 @@ const App: React.FC = () => {
         </div>
       </footer>
 
-      {/* Asistente Virtual IA */}
-      <ChatBot />
+
 
       {/* Modal Detalle Biográfico */}
       {activeStage && (
