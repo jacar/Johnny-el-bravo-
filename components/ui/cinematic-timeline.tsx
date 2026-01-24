@@ -123,9 +123,9 @@ export const CinematicTimeline: React.FC<CinematicTimelineProps> = ({ stages, on
                   : "opacity-0 translate-y-20 pointer-events-none"
                   }`}
               >
-                <div className="flex items-center justify-between w-full md:justify-start md:gap-10 mb-12">
+                <div className="flex items-center justify-between w-full md:justify-start md:gap-10 mb-44 md:mb-12">
                   <div className="flex flex-col">
-                    <span className="text-[#c5a059] font-bold text-[10px] uppercase tracking-[0.4em] mb-3">Capítulo</span>
+                    <span className="text-[#c5a059] font-bold text-[10px] uppercase tracking-[0.4em] mb-2">Capítulo</span>
                     <span className="text-white font-serif italic text-4xl leading-none">{String(idx + 1).padStart(1, '0')}</span>
                   </div>
                   <div className="hidden md:block h-10 w-px bg-[#c5a059]/30"></div>
